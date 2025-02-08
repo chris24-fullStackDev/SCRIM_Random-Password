@@ -1,0 +1,96 @@
+/** FONTS */
+@font-face {
+    font-family: Spartan;
+    src: url("fonts/Spartan-Regular.ttf");
+}
+@font-face {
+    font-family: SpartanBold;
+    src: url("fonts/Spartan-Bold.ttf");
+}
+
+body {
+    box-sizing: border-box;
+}
+p {
+    margin: 0 0 0 0;
+}
+
+/** APP CONTAINER */
+.app-container {
+    display: flex;
+    width: 620px;
+    height: 860px;
+    background-color: #A5BFDC;
+    margin: 10px auto;
+    padding: 10px 15px;
+}
+/** APP HEADER */
+.app-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 620px;
+    height: 160px;
+    /* border: 1px solid red; */
+}
+
+.header-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    font-family: "Spartan";
+    height: 124px;
+    width: 300px;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+    line-height: 100%;
+    /* border: 1px solid green; */
+}
+#title-highlight {
+    font-family: SpartanBold;
+    color: #0022FF;
+}
+
+.passcode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: start;
+    width: 100%;
+    height: 124px;
+    gap: 8px;
+    /* border: 1px solid blue; */
+}
+.header-icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    height: 100%;
+    width: 100%;
+   /*  border: 1px solid yellow; */
+}
+
+.icons {
+   display: flex;
+   height: 110px;
+   /* border: 1px solid rgb(112, 9, 9); */
+}
+
+.pincode-size {
+    width: 90px;
+    height: 100px;
+}
+
+.security-icon {
+    width: 110px;
+    height: 120px;
+}
+
+.tagline {
+    font-family: "Spartan";
+    font-size: 16px;
+}
