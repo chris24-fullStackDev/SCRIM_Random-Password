@@ -141,11 +141,12 @@ p {
 .input-details {
     width: 224px;
     height: 31px;
-    background-color:  #BAC8BC;
+    background-color:  #eef1d0;
     border: none;
     text-align: center;
     border-radius: 2px;
     outline: none;
+    font-weight: bold;
 }
 .input-details:focus {
     border: 1px solid rgba(255, 0, 21, 0.39);
