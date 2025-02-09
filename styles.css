@@ -29,6 +29,7 @@ p {
     padding: 10px 15px;
     gap: 10px;
     border-radius: 3px;
+    border: 1px solid black;
 }
 /** APP HEADER */
 .app-header {
@@ -169,9 +170,12 @@ p {
 
 /** GENERATE BUTTON */ 
 .generate-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 286px;
     height: 46px;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     background-color: #5F777A;
     border-radius: 4px;
@@ -180,11 +184,14 @@ p {
     text-shadow: 0 0 4px black;
     box-shadow:  0 0 4px black;
     margin-top: 40px;
-
+    font-family: Spartan-SemiBold;
+    text-align: center;
+    padding-top: 5px;
+    transition: .2s;
 }
 
 .generate-button:hover {
-    transition: 0.1ms;
+    transition: .2s;
     background-color: #1880bd;
 }
 .generate-button:focus {
@@ -199,8 +206,10 @@ p {
     display: flex;
     flex-direction: column;
     text-align: center;
+    justify-content: start;
     width: 100%;
     height: 250px;
+    border-radius: 12px;
     background-color: #0C508E;
     font-family: Spartan;
     font-size: 12px;
@@ -217,8 +226,8 @@ p {
 }
 
 .password-output-container {
-    width: 600px;
-    height: 50px;
+    width: 100%;
+    height: 100px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
@@ -236,6 +245,57 @@ p {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    box-shadow: 7px -8px 10px rgba(0, 0, 0, 0.288);;
+    box-shadow: 7px -8px 10px rgba(0, 0, 0, 0.288);
+    transition: .4s;
+}
+
+.password-output:hover {
+    background-color: #4D66B4;
+    border: 1px solid green;
+    transition: .4s;
+    
+}
+.password-output:active {
+    transform: scale(.95);
+    opacity: 20%;
+    transition: 0.2s;
+    
+}
+
+.clear-btn-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+
+}
+
+#clear-button {
+    width: 185px;
+    height: 40px;
+    border-radius: 4px;
+    background-color: #5F777A;
+    border: none;
+    color: white;
+    font-family: Spartan-SemiBold;
+    font-size: 16px;
+    text-shadow: 0 0 4px black;
+    box-shadow:  0 0 4px black;
+    transition: .5s;
+    cursor: pointer;
+}
+
+#clear-button:hover {
+    transition: .3s;
+    background-color: #1880bd;
+}
+#clear-button:focus {
+    background-color: #1885c48a;
+    outline: none;
+}
+#clear-button:active {
+    transform: scale(.97);
     
 }
