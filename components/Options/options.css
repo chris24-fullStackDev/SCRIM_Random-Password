@@ -3,12 +3,6 @@ body {
     
     
 }
-.container {
-    width: 600px;
-    height: 100px;
-    margin-top: 30%;
-    background-color: #0C508E;
-}
 .password-sets {
     text-align: center;
     width: 458px;
