@@ -55,18 +55,32 @@
             value="6"
           />
         </fieldset>
-         <!-- & PASSWORD PASSWORD CHARACTERS -->
+         
+         <!-- & CHECKBOXES -->
          <fieldset class="password-sets">
-          <legend class="option-header">PASSWORD CHARACTER</legend>
-          <input
-            class="input-details"
-            type="number"
-            min="6"
-            max="12"
-            value="6"
-          />
-        </fieldset>
+          <legend class="option-header">SET OF PASSWORD</legend>
+          <div class="checkbox-container">
+              <input class="checkbox-style" type="checkbox" id="numeric" name="uppercase" value="numeric">
+              <label class="label-gap" for="uppercase">NUMERIC</label>
+
+              <input class="checkbox-style" type="checkbox" id="symbols" name="uppercase" value="symbols">
+              <label  class="label-gap" for="uppercase">SYMBOLS</label>
+
+              <input class="checkbox-style" type="checkbox" id="lowercase" name="uppercase" value="lowercase">
+              <label class="label-gap" for="uppercase">LOWERCASE</label>
+
+              <input class="checkbox-style" type="checkbox" id="uppercase" name="uppercase" value="uppercase">
+              <label class="label-gap" for="uppercase">UPPERCASE</label>
+          </div>
+      </fieldset>  
+        <button class="generate-button">GENERATE PASSWORD</button>
       </section>
+      <!-- * GENERATED PASSWORD CONTAINER -->
+
+      <section class="generated-password">
+        <h1>GENERATED RANDOM PASSWORDS</h1>
+      </section>
+    
     </main>
 
     <script src="script.js"></script>

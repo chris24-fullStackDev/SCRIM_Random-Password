@@ -24,6 +24,7 @@ p {
     background-color: #A5BFDC;
     margin: 10px auto;
     padding: 10px 15px;
+    gap: 10px;
 }
 /** APP HEADER */
 .app-header {
@@ -108,8 +109,8 @@ p {
     background-color: #0C508E;
     border-radius: 12px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.336);
-    gap: 30px;
-    padding-top: 30px;
+    gap: 20px;
+    padding-top: 40px;
 }
 .password-sets {
     text-align: center;
@@ -143,4 +144,57 @@ p {
 }
 .input-details:focus {
     border: 1px solid rgba(255, 0, 21, 0.39);
+}
+
+/** CHECKBOX CONTAINER */
+.checkbox-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.checkbox-style {
+    margin-right: 0;
+}
+
+.label-gap {
+    margin-right: 10px;
+}
+
+
+/** GENERATE BUTTON */ 
+.generate-button {
+    width: 286px;
+    height: 46px;
+    font-size: 20px;
+    color: white;
+    background-color: #5F777A;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    text-shadow: 0 0 2px black;
+    box-shadow:  0 0 4px black;
+    margin-top: 40px;
+
+}
+
+.generate-button:hover {
+    transition: 0.1ms;
+    background-color: #1880bd;
+}
+.generate-button:focus {
+    background-color: #1885c48a;
+    outline: none;
+}
+.generate-button:active {
+    transform: scale(.97);
+}
+
+.generated-password {
+    width: 100%;
+    height: 250px;
+    background-color: #0C508E;
+    text-align: center;
+    
 }
