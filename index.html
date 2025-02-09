@@ -14,21 +14,58 @@
   </head>
   <body>
     <main class="app-container">
+      <!-- * APP HEADER CONTAINER -->
       <section class="app-header">
         <h1 class="header-title">
-            RANDOM<span id="title-highlight">PASSWORD</span>GENERATOR
+          RANDOM<span id="title-highlight">PASSWORD</span>GENERATOR
         </h1>
 
         <section class="header-icons">
-            <div class="passcode-container">
-                <section class="icons">
-                    <img class="pincode-size" src="img/pin-code.png" >
-                    <img class="pincode-size" src="img/pin-code.png" alt="">
-                    <img class="security-icon" src="img/security-agent.png" alt="">
-                </section>
-                <p class="tagline">The Smart Way to Stay Protected.</p>
-            </div>
+          <div class="passcode-container">
+            <section class="icons">
+              <img class="pincode-size" src="img/pin-code.png" />
+              <img class="pincode-size" src="img/pin-code.png" alt="" />
+              <img class="security-icon" src="img/security-agent.png" alt="" />
+            </section>
+            <p class="tagline">The Smart Way to Stay Protected.</p>
+          </div>
         </section>
+      </section>
+      <!-- * GENERATOR OPTIONS CONTAINER -->
+      <section class="option-container">
+          <!-- & PASSWORD SET -->
+        <fieldset class="password-sets">
+          <legend class="option-header">SET OF PASSWORD</legend>
+          <input
+            class="input-details"
+            type="number"
+            min="1"
+            max="6"
+            value="3"
+          />
+        </fieldset>
+          <!-- & PASSWORD LENGTH -->
+        <fieldset class="password-sets">
+          <legend class="option-header">PASSWORD LENGTH</legend>
+          <input
+            class="input-details"
+            type="number"
+            min="6"
+            max="12"
+            value="6"
+          />
+        </fieldset>
+         <!-- & PASSWORD PASSWORD CHARACTERS -->
+         <fieldset class="password-sets">
+          <legend class="option-header">PASSWORD CHARACTER</legend>
+          <input
+            class="input-details"
+            type="number"
+            min="6"
+            max="12"
+            value="6"
+          />
+        </fieldset>
       </section>
     </main>
 

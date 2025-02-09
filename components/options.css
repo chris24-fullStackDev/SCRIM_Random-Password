@@ -1,0 +1,45 @@
+body {
+    box-sizing: border-box;
+    
+    
+}
+.container {
+    width: 600px;
+    height: 100px;
+    margin-top: 30%;
+    background-color: #0C508E;
+}
+.password-sets {
+    text-align: center;
+    width: 458px;
+    height: 54px;
+    background-color: #80A3C3;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.219);
+
+}
+.option-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+    height: 22px;
+    background-color: #727272;
+    color: white;
+    font-size: 10px;
+    border-radius: 6px;
+}
+.input-details {
+    width: 224px;
+    height: 31px;
+    background-color:  #BAC8BC;
+    border: none;
+    text-align: center;
+    border-radius: 2px;
+    outline: none;
+}
+.input-details:focus {
+    border: 1px solid rgba(255, 0, 21, 0.39);
+}
+
