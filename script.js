@@ -29,30 +29,45 @@ inputSymbols.addEventListener("change", getUserOptions);
 inputUppercase.addEventListener("change", getUserOptions);
 inputLowercase.addEventListener("change", getUserOptions);
 
-let userSelection = "";
+let userSelectedCharacters = "";
+let randomPasswordResult = "";
+let passwordSet = [];
 
 function getUserOptions() { //^& UPDATE USER SELECTION
   if (inputNumeric.checked) {
-    userSelection += numericValue;
+    userSelectedCharacters += numericValue;
   }
   if (inputSymbols.checked) {
-    userSelection += symbolsValue;
+    userSelectedCharacters += symbolsValue;
   }
   if (inputUppercase.checked) {
-    userSelection += uppercaseValue;
+    userSelectedCharacters += uppercaseValue;
   }
   if (inputLowercase.checked) {
-    userSelection += lowercaseValue;
+    userSelectedCharacters += lowercaseValue;
   }
-  if (userSelection.length === 0) {
+  if (userSelectedCharacters.length === 0) {
     alert("Please select at least one character type");
-    return;
 }
 }
 function getSetLength() { //^& GET SETS AND LENGTH
-
+    if (setOfPasswords.value === 0 || passwordLength.value >  6) {
+        alert("Please enter a valid number of sets and a password length between 1 and 6");
+         }
+    if (passwordLength.value === 0 || passwordLength.value > 14) {
+        alert("Please enter a valid password length between 5 and 14");
+    }
 }
 
 function generateBtn () {
-  getUserOptions();
+    getUserOptions();
+
+  for (let i = 0; i < passwordLength.value; i++) {
+    let randomIndex = Math.floor(Math.random() * userSelectedCharacters.length);
+    randomPasswordResult += userSelectedCharacters[randomIndex];
+}
+resultButton1.textContent =randomPasswordResult;
+userSelectedCharacters = "";
+randomPasswordResult = "";
+
 }
