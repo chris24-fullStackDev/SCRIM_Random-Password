@@ -33,67 +33,93 @@
       </section>
       <!-- * GENERATOR OPTIONS CONTAINER -->
       <section class="option-container">
-          <!-- & PASSWORD SET -->
+        <!-- & PASSWORD SET -->
         <fieldset class="password-sets">
           <legend class="option-header">SET OF PASSWORD</legend>
           <input
             class="input-details"
+            id="set-of-passwords"
             type="number"
             min="1"
             max="6"
             value="3"
           />
         </fieldset>
-          <!-- & PASSWORD LENGTH -->
+        <!-- & PASSWORD LENGTH -->
         <fieldset class="password-sets">
           <legend class="option-header">PASSWORD LENGTH</legend>
           <input
             class="input-details"
+            id="password-length"
             type="number"
             min="6"
             max="12"
             value="6"
           />
         </fieldset>
-         
-         <!-- & CHECKBOXES -->
-         <fieldset class="password-sets">
-          <legend class="option-header">SET OF PASSWORD</legend>
+
+        <!-- & CHECKBOXES -->
+        <fieldset class="password-sets">
+          <legend class="option-header">CHARACTER SET</legend>
           <div class="checkbox-container">
-              <input class="checkbox-style" type="checkbox" id="numeric" name="uppercase" value="numeric">
-              <label class="label-gap" for="uppercase">NUMERIC</label>
+            <input
+              class="checkbox-style"
+              type="checkbox"
+              id="input-numeric"
+              name="input-numeric"
+              value="input-numeric"
+            />
+            <label class="label-gap" for="uppercase">NUMERIC</label>
 
-              <input class="checkbox-style" type="checkbox" id="symbols" name="uppercase" value="symbols">
-              <label  class="label-gap" for="uppercase">SYMBOLS</label>
+            <input
+              class="checkbox-style"
+              type="checkbox"
+              id="input-symbols"
+              name="input-symbols"
+              value="input-symbols"
+            />
+            <label class="label-gap" for="uppercase">SYMBOLS</label>
 
-              <input class="checkbox-style" type="checkbox" id="lowercase" name="uppercase" value="lowercase">
-              <label class="label-gap" for="uppercase">LOWERCASE</label>
+            <input
+              class="checkbox-style"
+              type="checkbox"
+              id="input-lowercase"
+              name="input-lowercase"
+              value="input-lowercase"
+            />
+            <label class="label-gap" for="uppercase">LOWERCASE</label>
 
-              <input class="checkbox-style" type="checkbox" id="uppercase" name="uppercase" value="uppercase">
-              <label class="label-gap" for="uppercase">UPPERCASE</label>
+            <input
+              class="checkbox-style"
+              type="checkbox"
+              id="input-uppercase"
+              name="input-uppercase"
+              value="input-uppercase"
+            />
+            <label class="label-gap" for="uppercase">UPPERCASE</label>
           </div>
-      </fieldset>  
-        <button class="generate-button">GENERATE PASSWORD</button>
+        </fieldset>
+        <button class="generate-button" onclick="generateBtn()">GENERATE PASSWORD</button>
       </section>
       <!-- * GENERATED PASSWORD CONTAINER -->
 
       <section class="generated-password-container">
         <p class="password-footer">GENERATED RANDOM PASSWORDS</p>
-          <!-- & INSERT GENERATED PASSWORDS HERE -->
-          <div class="password-output-container">
-            <button class="password-output">1</button>
-            <button class="password-output">2</button>
-            <button class="password-output">3</button>
-            <button class="password-output">4</button>
-            <button class="password-output">5</button>
-            <button class="password-output">6</button>
+        <!-- & INSERT GENERATED PASSWORDS HERE -->
+        <div class="password-output-container">
+          <button class="password-output" id="result-button1" onclick="copyButton()">1</button>
+          <button class="password-output" id="result-button2" onclick="copyButton()">2</button>
+          <button class="password-output" id="result-button3" onclick="copyButton()">3</button>
+          <button class="password-output" id="result-button4" onclick="copyButton()">4</button>
+          <button class="password-output" id="result-button5" onclick="copyButton()">5</button>
+          <button class="password-output" id="result-button6" onclick="copyButton()">6</button>
         </div>
-     
+
         <div class="clear-btn-container">
-          <button id="clear-button">CLEAR</button>
+          <button id="clear-button" onclick="clearBtn()">CLEAR</button>
         </div>
       </section>
-    
+      <div id="result">Result: </div>
     </main>
 
     <script src="script.js"></script>
