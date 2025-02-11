@@ -29,6 +29,17 @@ inputSymbols.addEventListener("change", getUserOptions);
 inputUppercase.addEventListener("change", getUserOptions);
 inputLowercase.addEventListener("change", getUserOptions);
 
+
+//* ADD EVENT LISTENERS FOR RESULT BUTTONS
+resultButton1.addEventListener("click", copyButton);
+resultButton2.addEventListener("click", copyButton);
+resultButton3.addEventListener("click", copyButton);
+resultButton4.addEventListener("click", copyButton);
+resultButton5.addEventListener("click", copyButton);
+resultButton6.addEventListener("click", copyButton);
+//* GENERATED PASSWORDS
+const passwordOutput = document.getElementsByClassName("password-output");
+
 let userSelectedCharacters = "";
 let randomPasswordResult = "";
 let passwordSet = [];
@@ -96,6 +107,11 @@ function getLengthSet() {
 
 function generateBtn() {
  // userSelectedCharacters = "";
+ passwordSet = [];
+
+ if (!getUserOptions() || !getLengthPassword()) {
+  return null;
+}
   getLengthSet()
 
   resultButton1.textContent = passwordSet[0] || "-";
@@ -106,10 +122,38 @@ function generateBtn() {
   resultButton6.textContent = passwordSet[5] || "-";
 }
 
+function copyButton() {
+navigator.clipboard.writeText(this.textContent);
+alert("Password copied to clipboard");
+}
+
+function clearBtn() {
+  resultButton1.textContent = "-";
+  resultButton2.textContent = "-";
+  resultButton3.textContent = "-";
+  resultButton4.textContent = "-";
+  resultButton5.textContent = "-";
+  resultButton6.textContent = "-";
+  passwordSet = [];
+  setOfPasswords.value = "";
+  passwordLength.value = "";
+  inputNumeric.checked = false;
+  inputSymbols.checked = false;
+  inputUppercase.checked = false;
+  inputLowercase.checked = false;
+  passwordOutput[0].textContent = "";
+  passwordOutput[1].textContent = "";
+  passwordOutput[2].textContent = "";
+  passwordOutput[3].textContent = "";
+  passwordOutput[4].textContent = "";
+  passwordOutput[5].textContent = "";
+ 
+}
+
 /*
 - Validation input.value  in Function in IF condition is valid  before generating the passwords.
 - Using parseInt() function Converting inputs value to numbers.
 - Use isNaN() function to check if the value is not a number.
-- Binding a variable to outside scope variable to use its current value.
+- Binding a variable to global  variable to use its current value.
 - Adding addEventListener to chechbox to get its current state using "change" event.
 */
