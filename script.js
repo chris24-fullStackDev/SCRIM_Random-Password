@@ -31,9 +31,9 @@ inputLowercase.addEventListener("change", getUserOptions);
 
 let userSelectedCharacters = "";
 let randomPasswordResult = "";
-let passwordSet = [];
 
-function getUserOptions() { //^& UPDATE USER SELECTION
+function getUserOptions() {
+  //^& UPDATE USER SELECTION
   if (inputNumeric.checked) {
     userSelectedCharacters += numericValue;
   }
@@ -48,26 +48,52 @@ function getUserOptions() { //^& UPDATE USER SELECTION
   }
   if (userSelectedCharacters.length === 0) {
     alert("Please select at least one character type");
+    return false;
+  }
+  return true;
 }
+function getLengthPassword() {
+  //^& GET SETS AND LENGTH
+  if (setOfPasswords.value === 0 || passwordLength.value > 6) {
+    alert(
+      "Please enter a valid number of sets and a password length between 1 and 6"
+    );
+    return false;
+  }
+  if (passwordLength.value < 5 || passwordLength.value > 14) {
+    alert("Please enter a valid password length between 5 and 14");
+    return false;
+  }
+  return true;
 }
-function getSetLength() { //^& GET SETS AND LENGTH
-    if (setOfPasswords.value === 0 || passwordLength.value >  6) {
-        alert("Please enter a valid number of sets and a password length between 1 and 6");
-         }
-    if (passwordLength.value === 0 || passwordLength.value > 14) {
-        alert("Please enter a valid password length between 5 and 14");
-    }
-}
-
-function generateBtn () {
-    getUserOptions();
+function generateRandomPassword() {
+  getUserOptions();
+  getLengthPassword();
 
   for (let i = 0; i < passwordLength.value; i++) {
+    let randomPass = "";
     let randomIndex = Math.floor(Math.random() * userSelectedCharacters.length);
-    randomPasswordResult += userSelectedCharacters[randomIndex];
+    randomPass += userSelectedCharacters[randomIndex];
+  }
+  return randomPass;
 }
-resultButton1.textContent =randomPasswordResult;
-userSelectedCharacters = "";
-randomPasswordResult = "";
+function getLengthSet() {
+  generateRandomPassword();
+  let passwordSetArray = [];
+  for (let i = 0; i < setOfPasswords.value; i++) {
+    passwordSetArray.push(generateRandomPassword());
+  }
+  return passwordSetArray;
+}
 
+function generateBtn() {
+  userSelectedCharacters = "";
+  let passwordSet = getLengthSet();
+
+  resultButton1.textContent = passwordSet[0] || "-";
+  resultButton2.textContent = passwordSet[1] || "-";
+  resultButton3.textContent = passwordSet[2] || "-";
+  resultButton4.textContent = passwordSet[3] || "-";
+  resultButton5.textContent = passwordSet[4] || "-";
+  resultButton6.textContent = passwordSet[5] || "-";
 }

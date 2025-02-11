@@ -241,18 +241,25 @@ p {
 
 .password-output {
     background-color: #5579D4;
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 3px rgb(70, 73, 77);
+    font-family: Spartan;
+    font-size: 10px;
     width: 182px;
     height: 42px;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     box-shadow: 7px -8px 10px rgba(0, 0, 0, 0.288);
+    padding-top: 6px;
     transition: .4s;
 }
 
 .password-output:hover {
     background-color: #4D66B4;
     border: 1px solid green;
+    color: white;
+    text-shadow: 0 0 4px black;
     transition: .4s;
     
 }
