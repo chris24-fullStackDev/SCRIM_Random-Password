@@ -31,9 +31,11 @@ inputLowercase.addEventListener("change", getUserOptions);
 
 let userSelectedCharacters = "";
 let randomPasswordResult = "";
+let passwordSet = [];
 
 function getUserOptions() {
   //^& UPDATE USER SELECTION
+  userSelectedCharacters = "";
   if (inputNumeric.checked) {
     userSelectedCharacters += numericValue;
   }
@@ -54,7 +56,7 @@ function getUserOptions() {
 }
 function getLengthPassword() {
   //^& GET SETS AND LENGTH
-  if (setOfPasswords.value === 0 || passwordLength.value > 6) {
+  if (setOfPasswords.value < 1 || setOfPasswords.value > 6) {
     alert(
       "Please enter a valid number of sets and a password length between 1 and 6"
     );
@@ -67,28 +69,34 @@ function getLengthPassword() {
   return true;
 }
 function generateRandomPassword() {
-  getUserOptions();
-  getLengthPassword();
+   /* getUserOptions()
+   getLengthPassword() */
+
+   if (!getUserOptions() || !getLengthPassword()) {
+    return null; 
+  }
+    
+
+  let randomPass = "";
 
   for (let i = 0; i < passwordLength.value; i++) {
-    let randomPass = "";
     let randomIndex = Math.floor(Math.random() * userSelectedCharacters.length);
     randomPass += userSelectedCharacters[randomIndex];
   }
   return randomPass;
 }
 function getLengthSet() {
-  generateRandomPassword();
   let passwordSetArray = [];
   for (let i = 0; i < setOfPasswords.value; i++) {
     passwordSetArray.push(generateRandomPassword());
   }
-  return passwordSetArray;
+  passwordSet = passwordSetArray;
+  return passwordSet;
 }
 
 function generateBtn() {
-  userSelectedCharacters = "";
-  let passwordSet = getLengthSet();
+ // userSelectedCharacters = "";
+  getLengthSet()
 
   resultButton1.textContent = passwordSet[0] || "-";
   resultButton2.textContent = passwordSet[1] || "-";
@@ -97,3 +105,11 @@ function generateBtn() {
   resultButton5.textContent = passwordSet[4] || "-";
   resultButton6.textContent = passwordSet[5] || "-";
 }
+
+/*
+- Validation input.value  in Function in IF condition is valid  before generating the passwords.
+- Using parseInt() function Converting inputs value to numbers.
+- Use isNaN() function to check if the value is not a number.
+- Binding a variable to outside scope variable to use its current value.
+- Adding addEventListener to chechbox to get its current state using "change" event.
+*/
